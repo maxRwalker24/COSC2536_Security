@@ -266,7 +266,7 @@ if __name__ == "__main__":
     password_2 = input("Re-enter your password to decrypt the message: ")
 
     while password != password_2:
-        print("Warning: Passwords do not match! Decryption may fail.")
+        print("Warning: Passwords do not match! ")
         password_2 = input("Re-enter your password to decrypt the message: ")
 
     # Decrypt the extracted message
