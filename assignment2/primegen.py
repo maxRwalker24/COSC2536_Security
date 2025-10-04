@@ -33,7 +33,7 @@ Note:
 
 
 =====================================
-
+# NOTE
 Please note that while I have adapted and learned from these sources, the code provided here is my own adaptation. I do wish to give due credit to the original authors for their work and insights!
 
 =====================================
@@ -161,4 +161,26 @@ def generate_two_distinct_primes(bit_length=512):
         prime_two = generate_large_prime(bit_length)
     return prime_one, prime_two
 
+# Compute private exponent d using Extended Euclidean Algorithm
+def extended_gcd(a, b):
+    """Return (g, x, y) such that a*x + b*y = g = gcd(a,b)"""
+    if a == 0:
+        return (b, 0, 1)
+    else:
+        g, x1, y1 = extended_gcd(b % a, a)
+        x = y1 - (b // a) * x1
+        y = x1
+        return (g, x, y)
 
+# Modular inverse of e mod φ(n)
+def mod_inverse(e, phi):
+    g, x, _ = extended_gcd(e, phi)
+    if g != 1:
+        raise Exception('Modular inverse does not exist')
+    else:
+        return x % phi
+
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a

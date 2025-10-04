@@ -181,8 +181,8 @@ if __name__ == "__main__":
     
     # Display all encryption outputs
     print("Encrypted Message (base64):", b64encode(encrypted_message).decode())
-    print("Initialization Vector (IV, base64):", b64encode(iv).decode())
-    print("Encrypted AES Key (base64):", b64encode(encrypted_key).decode(), "\n")
+    print("\nInitialization Vector (IV, base64):", b64encode(iv).decode())
+    print("\nEncrypted AES Key (base64):", b64encode(encrypted_key).decode(), "\n")
     
     # Decrypt the encrypted file
     decrypted_message = decrypt_file(encrypted_message, iv, encrypted_key, private_key)

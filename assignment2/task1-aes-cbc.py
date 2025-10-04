@@ -74,7 +74,7 @@ def decrypt_file(input_file_path, output_file_path, key_file_path):
         f.write(plaintext_bytes)
 
     # Also print the plaintext for verification
-    print("Decrypted text:\n", plaintext_bytes.decode())
+    print("Decrypted text:\n" + plaintext_bytes.decode())
 
 
 # Driver code

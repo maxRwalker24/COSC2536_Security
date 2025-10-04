@@ -19,3 +19,8 @@ env/
 Thumbs.db
 
 __MACOSX/
+
+# prevent github warnings
+keys/*
+
+assignment2/keys/*
