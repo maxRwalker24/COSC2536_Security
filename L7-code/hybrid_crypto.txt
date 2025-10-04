@@ -1,0 +1,17 @@
+Implements hybrid encryption, combining AES (symmetric) and RSA (asymmetric) cryptography.
+
+RSA keys are generated with 2048-bit key size; the public key encrypts the AES key, and the private key decrypts it.
+
+A random AES-256 key is generated for encrypting the actual message.
+
+AES encryption uses CFB mode with a random initialization vector (IV) and PKCS7 padding to handle block alignment.
+
+The AES key is encrypted with RSA using OAEP padding for secure key transmission.
+
+The encrypted message, IV, and encrypted AES key are returned for storage or transmission.
+
+The decryption function reverses the process: RSA decrypts the AES key, then AES decrypts the message, and PKCS7 padding is removed.
+
+The script demonstrates end-to-end encryption and decryption, printing the original message, encrypted message, IV, encrypted AES key, and decrypted message.
+
+Designed for experimentation and learning about combining symmetric and asymmetric encryption for secure communications.
