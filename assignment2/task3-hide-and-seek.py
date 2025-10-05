@@ -200,7 +200,7 @@ def extract_message_from_jpeg(stego_jpeg_path: str) -> bytes:
 
     """
     The JPEG specification (Wikipedia JPEG Syntax and structure) defines that after any marker that carries data (like COM, APPn, etc.), two bytes follow which encode the segment length in big-endian. Importantly, this length includes the two length-field bytes but does not include the marker bytes.
-    We therefore read:
+    I therefore need to read:
       high_byte = jpeg_bytes[idx+2]
       low_byte  = jpeg_bytes[idx+3]
       length = high_byte << 8 + low_byte
