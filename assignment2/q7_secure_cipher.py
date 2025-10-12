@@ -9,7 +9,7 @@ References:
 - Cryptography.io documentation: https://cryptography.io/en/latest/
 
 This program generates a secure RSA key pair and encrypts a plaintext message using OAEP.
-Key.txt contains the public key, cipher.txt contains the encrypted message (base64-encoded).
+Key.txt contains the public key, cipher.txt contains the encrypted message (base64-encoded). Hack.exe is unable to break this encryption.
 """
 
 import os
@@ -92,9 +92,7 @@ if __name__ == "__main__":
     save_public_key(public_key, key_path)
     print(f"Public key saved to {key_path}")
     
-    # Define plaintext message (can be replaced with user input or file)
-    # plaintext = "This ciphertext cannot be broken by Hack.exe."
-    
+    # Get plaintext input from user    
     plaintext = input("Enter the plaintext message to encrypt: ")
     # Encrypt using RSA OAEP padding
     cipher_b64 = encrypt_message(plaintext, public_key)
